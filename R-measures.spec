@@ -4,7 +4,7 @@
 #
 Name     : R-measures
 Version  : 0.2
-Release  : 4
+Release  : 5
 URL      : https://cran.r-project.org/src/contrib/measures_0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/measures_0.2.tar.gz
 Summary  : Performance Measures for Statistical Learning
@@ -24,11 +24,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533751528
+export SOURCE_DATE_EPOCH=1552774555
 
 %install
+export SOURCE_DATE_EPOCH=1552774555
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1533751528
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -63,8 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library measures|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  measures || :
 
 
 %files
@@ -90,3 +89,5 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/measures/help/paths.rds
 /usr/lib64/R/library/measures/html/00Index.html
 /usr/lib64/R/library/measures/html/R.css
+/usr/lib64/R/library/measures/tests/testthat.R
+/usr/lib64/R/library/measures/tests/testthat/test_base.R
