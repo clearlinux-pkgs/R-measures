@@ -4,7 +4,7 @@
 #
 Name     : R-measures
 Version  : 0.2
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/measures_0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/measures_0.2.tar.gz
 Summary  : Performance Measures for Statistical Learning
