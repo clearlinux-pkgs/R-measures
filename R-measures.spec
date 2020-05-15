@@ -4,15 +4,13 @@
 #
 Name     : R-measures
 Version  : 0.2
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/measures_0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/measures_0.2.tar.gz
 Summary  : Performance Measures for Statistical Learning
 Group    : Development/Tools
 License  : GPL-3.0
-BuildRequires : R-rlang
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 # measures
@@ -20,21 +18,22 @@ Package that provides the biggest amount of statistical measures in the whole R 
 
 %prep
 %setup -q -c -n measures
+cd %{_builddir}/measures
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571864451
+export SOURCE_DATE_EPOCH=1589535907
 
 %install
-export SOURCE_DATE_EPOCH=1571864451
+export SOURCE_DATE_EPOCH=1589535907
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
